@@ -1,245 +1,119 @@
-# NetraVaani - Assistive Eye-Blink Communication System# Welcome to your Lovable project
+# Netraavani - Eye Blink Communication System
 
+Netraavani is an innovative assistive technology system that enables communication through eye blink detection. The system uses ESP32-based hardware to detect eye blinks and translates them into meaningful communication through various interfaces including Morse code, training modules, and interactive games.
 
+## Features
 
-**An innovative assistive technology system enabling communication through eye blinks for individuals with limited mobility**## Project info
+- **Real-time Eye Blink Detection**: Hardware-based EOG (Electrooculography) signal processing using ESP32
+- **Multiple Communication Modes**:
+  - Morse code translator
+  - Interactive training modules
+  - Communication games
+  - Dashboard for device monitoring
+- **User Management**: Secure authentication and profile management
+- **Device Status Monitoring**: Real-time connection status and health monitoring
+- **Responsive Web Interface**: Built with modern React and TypeScript
 
+## Getting Started
 
+### Prerequisites
 
-## 🌟 Features**URL**: https://lovable.dev/projects/d1ec1085-ceab-44b4-9a2a-f225f148e6c0
-
-
-
-- 🎯 **Blink Detection System** - ESP32-based EOG sensor for accurate blink detection## How can I edit this code?
-
-- 🗣️ **AI Talk Training** - Hierarchical sentence builder using blink navigation
-
-- 🎮 **Target Game** - Interactive training game for blink coordinationThere are several ways of editing your application.
-
-- 💡 **Smart Home Control** - MQTT-based light control via blinks
-
-- 📱 **Responsive Dashboard** - Intuitive radial menu interface**Use Lovable**
-
-- 🔐 **User Authentication** - MongoDB-based signup/signin system
-
-- 📡 **Real-time Communication** - WebSocket for instant blink event transmissionSimply visit the [Lovable Project](https://lovable.dev/projects/d1ec1085-ceab-44b4-9a2a-f225f148e6c0) and start prompting.
-
-
-
-## 🚀 Getting StartedChanges made via Lovable will be committed automatically to this repo.
-
-
-
-### Prerequisites**Use your preferred IDE**
-
-
-
-- Node.js (v18 or higher)If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-- MongoDB (local or cloud instance)
-
-- ESP32 microcontroller with EOG sensorThe only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-- Mosquitto MQTT broker (optional, for light control)
-
-Follow these steps:
+- Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- ESP32 device (for hardware component)
 
 ### Installation
 
 ```sh
+# Clone the repository
+git clone <YOUR_GIT_URL>
 
-1. **Clone the repository**# Step 1: Clone the repository using the project's Git URL.
+# Navigate to the project directory
+cd blink-link-assistV6
 
-```bashgit clone <YOUR_GIT_URL>
-
-git clone https://github.com/SoumenSample/NetraVaani.git
-
-cd NetraVaani# Step 2: Navigate to the project directory.
-
-```cd <YOUR_PROJECT_NAME>
-
-
-
-2. **Install dependencies**# Step 3: Install the necessary dependencies.
-
-```bashnpm i
-
+# Install dependencies
 npm install
 
-cd server# Step 4: Start the development server with auto-reloading and an instant preview.
-
-npm installnpm run dev
-
-cd ..```
-
+# Start the development server
+npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The development server will start at `http://localhost:5173`
 
-3. **Configure environment**
+### Backend Server Setup
 
-Create a `.env` file in the server directory:- Navigate to the desired file(s).
+```sh
+# Navigate to the server directory
+cd server
 
-```env- Click the "Edit" button (pencil icon) at the top right of the file view.
+# Install server dependencies
+npm install
 
-MONGODB_URI=your_mongodb_connection_string- Make your changes and commit the changes.
-
-PORT=8787
-
-```**Use GitHub Codespaces**
-
-
-
-4. **Start the backend server**- Navigate to the main page of your repository.
-
-```bash- Click on the "Code" button (green button) near the top right.
-
-cd server- Select the "Codespaces" tab.
-
-node index.js- Click on "New codespace" to launch a new Codespace environment.
-
-```- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-
-
-5. **Start the frontend development server**## What technologies are used for this project?
-
-```bash
-
-npm run devThis project is built with:
-
+# Start the server
+node index.js
 ```
 
-- Vite
+### ESP32 Firmware
 
-6. **Upload ESP32 firmware**- TypeScript
+The `esp32-firmware/` directory contains Arduino sketches for the eye blink detection hardware:
 
-- Open Arduino IDE- React
+- `blink-system-eog-mqtt.ino` - MQTT-enabled EOG system
+- `blink-system-eog.ino` - Basic EOG system
+- `blink-system-v3.ino` - Version 3 of the blink detection system
+- `blink-system-simple.ino` - Simplified version for testing
 
-- Load `esp32-firmware/blink-system-eog-mqtt.ino`- shadcn-ui
+Upload the appropriate sketch to your ESP32 using Arduino IDE.
 
-- Configure WiFi credentials and server URL- Tailwind CSS
-
-- Upload to ESP32
-
-## How can I deploy this project?
-
-## 📖 How It Works
-
-Simply open [Lovable](https://lovable.dev/projects/d1ec1085-ceab-44b4-9a2a-f225f148e6c0) and click on Share -> Publish.
-
-### Blink Navigation Pattern
-
-- **2 Blinks** 👁️👁️ = Navigate/Cycle through options## Can I connect a custom domain to my Lovable project?
-
-- **3 Blinks** 👁️👁️👁️ = Select current option
-
-- **5 Blinks** 👁️👁️👁️👁️👁️ = Go back/Emergency alertYes, you can!
-
-
-
-### Dashboard MenuTo connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-1. **Food** - Request food assistance
-
-2. **Water** - Request waterRead more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
-
-3. **Toilet** - Request bathroom assistance
-
-4. **Game** - Launch target training game
-5. **AI Talk** - Open conversation builder
-6. **Talk Training** - Practice sentence formation
-7. **Light Control** - Toggle smart lights via MQTT
-
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Frontend
-- React 18 with TypeScript
-- Vite for build tooling
-- TailwindCSS for styling
-- Shadcn/ui components
-- Socket.IO client for WebSocket
+- **React** - UI framework
+- **TypeScript** - Type-safe JavaScript
+- **Vite** - Build tool and dev server
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - Reusable component library
+- **React Router** - Client-side routing
+- **Clerk** - Authentication and user management
+- **Recharts** - Data visualization
+- **Socket.io Client** - Real-time communication
 
 ### Backend
-- Node.js with Express
-- MongoDB for user data
-- Socket.IO for real-time communication
-- Mosquitto MQTT for IoT control
+- **Node.js** - Runtime environment
+- **Express** - Web framework
+- **MongoDB** - Database
+- **Socket.io** - WebSocket server
+- **MQTT** - IoT messaging protocol
 
 ### Hardware
-- ESP32 microcontroller
-- EOG (Electrooculography) sensor
-- Relay modules for light control
+- **ESP32** - Microcontroller for eye blink detection
+- **EOG Sensors** - Electrooculography signal capture
 
-## 📂 Project Structure
+## Project Structure
 
 ```
-NetraVaani/
-├── src/
-│   ├── components/     # Reusable UI components
-│   ├── contexts/       # React contexts (DeviceContext)
-│   ├── pages/          # Main application pages
-│   ├── lib/            # Utility functions
-│   └── hooks/          # Custom React hooks
-├── server/
-│   └── index.js        # Express server with WebSocket & MongoDB
-├── esp32-firmware/
-│   └── *.ino          # ESP32 Arduino firmware files
-└── public/            # Static assets
+├── src/                  # Frontend source code
+│   ├── components/      # React components
+│   ├── pages/          # Page components
+│   ├── contexts/       # React contexts
+│   ├── hooks/          # Custom hooks
+│   └── lib/            # Utilities
+├── server/             # Backend server code
+├── esp32-firmware/     # ESP32 Arduino sketches
+└── public/             # Static assets
 ```
 
-## 🎯 Usage Guide
+## Available Scripts
 
-### For Caregivers
-1. Ensure ESP32 device is powered and connected to WiFi
-2. Open NetraVaani dashboard in browser
-3. Verify device connection (green indicator)
-4. Monitor user's blink commands
-5. Respond to requests and emergency alerts
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run build:dev` - Build for development
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
-### For Users
-1. Use 2 blinks to navigate through menu options
-2. Use 3 blinks to select highlighted option
-3. Use 5 blinks for emergency alerts
-4. Practice with the Target Game to improve accuracy
-
-## 🔧 Configuration
-
-### ESP32 Firmware Settings
-Edit in `esp32-firmware/blink-system-eog-mqtt.ino`:
-```cpp
-const char* ssid = "your_wifi_ssid";
-const char* password = "your_wifi_password";
-const char* serverUrl = "http://your_server_ip:8787";
-const char* mqtt_server = "your_mqtt_broker_ip";
-```
-
-### Blink Detection Thresholds
-Adjust in firmware:
-```cpp
-const unsigned long blinkWindow_2 = 4000;  // 2-blink window (ms)
-const unsigned long blinkWindow_3 = 3000;  // 3-blink window (ms)
-const unsigned long blinkWindow_5 = 3000;  // 5-blink window (ms)
-```
-
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📄 License
+## License
 
-This project is licensed under the MIT License.
+This project is part of an assistive technology initiative to help individuals with motor disabilities communicate effectively.
 
-## 🙏 Acknowledgments
-
-- Built with accessibility and inclusivity in mind
-- Inspired by assistive technology research
-- Dedicated to empowering individuals with limited mobility
-
-## 📞 Support
-
-For questions or support, please open an issue on GitHub.
-
----
-
-**NetraVaani** - Empowering voices through innovation 👁️💙
